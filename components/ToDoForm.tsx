@@ -6,15 +6,17 @@ import { useState } from "react";
 function ToDoForm() {
   const [title, setTitle] = useState('')
   const [description, setdescription] = useState('')
-  const { addTodo } = useToDo()
-  
+  const { addTodo, todos } = useToDo()
+
   const add = (e: any) => {
-    e.preventDefault()
-    if (!setdescription && !title) return
-    addTodo({ id: nanoid(6), title, description, completed: false })
-    setTitle("")
-    setdescription('')
-  }
+    e.preventDefault();
+    if (!description || !title) {
+      return;
+    }
+    addTodo({ id: nanoid(6), title, description, completed: false });
+    setTitle('');
+    setdescription('');
+  };
   return (
     <form className="flex gap-2">
       <input

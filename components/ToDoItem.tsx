@@ -1,6 +1,8 @@
+'use client'
 import { useToDo } from '@/context/ToDoContext'
 import { ToDo } from '@/types/todo'
 import React, { useState } from 'react'
+
 type props = {
     todo: ToDo
 }
@@ -13,6 +15,7 @@ function TodoItem({ todo }: props) {
     const editTodo = () => {
         updateTodo(todo.id, { ...todo, title, description })
         setIsTodoEditable(false)
+        
     }
     const toggleCompleted = () => {
         //console.log(todo.id);

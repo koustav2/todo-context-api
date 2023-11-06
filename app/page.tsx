@@ -1,7 +1,6 @@
 'use client';
 import { ToDo } from '@/types/todo';
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
 import { TodoProvider } from '@/context/ToDoContext';
 import ToDoForm from '@/components/ToDoForm';
 import ToDoItem from '@/components/ToDoItem';
@@ -9,7 +8,8 @@ export default function Home() {
   const [todos, setTodos] = useState<ToDo[]>([]);
 
   const addTodo = (todo: ToDo) => {
-    setTodos((prev) => [...prev, todo]);
+    setTodos((prev) => [...prev, todo]
+    );
   };
   const updateTodo = (id: string, todo: ToDo) => {
     setTodos((prev) =>
