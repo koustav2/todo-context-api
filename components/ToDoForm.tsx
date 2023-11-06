@@ -12,7 +12,7 @@ function ToDoForm() {
 
     if (!setdescription && !title) return
 
-    addTodo({ id: nanoid(), title, description, completed: false })
+    addTodo({ id: nanoid(6), title, description, completed: false })
     setTitle("")
     setdescription('')
   }
