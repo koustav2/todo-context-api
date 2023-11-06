@@ -7,11 +7,10 @@ function ToDoForm() {
   const [title, setTitle] = useState('')
   const [description, setdescription] = useState('')
   const { addTodo } = useToDo()
+  
   const add = (e: any) => {
     e.preventDefault()
-
     if (!setdescription && !title) return
-
     addTodo({ id: nanoid(6), title, description, completed: false })
     setTitle("")
     setdescription('')
